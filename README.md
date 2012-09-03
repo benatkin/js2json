@@ -5,7 +5,7 @@ expression will be converted to JSON by taking its source, stripping its
 indentation, and putting it into a JSON string. This is currently the
 only JavaScript expression that is supported.
 
-Goes with [js2json][js2json] to support modifying a CouchApp design
+Goes with [json2js][json2js] to support modifying a CouchApp design
 document in a single file.
 
 Stay tuned for more tools to enable editing CouchApp design documents
@@ -62,6 +62,6 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-[js2json]: https://npmjs.org/package/js2json
+[json2js]: https://npmjs.org/package/json2js
 [esprima]: http://esprima.org/
 
