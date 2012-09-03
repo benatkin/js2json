@@ -4,6 +4,7 @@ module.exports = {
     this.js2json = require('./').init();
     this.values.example = this.values.example.join("\n");
     this.values.exampleFunction = this.values.exampleFunction.join("\n");
+    this.values.arrayExample = this.values.arrayExample.join("\n");
     this.values.parsedModule = this.values.parsedModule.bind(this);
   },
   "values": {
@@ -20,6 +21,13 @@ module.exports = {
       "  /* a comment */",
       "  console.log('Hello, world.');",
       "}",
+    ],
+    "arrayExample": [
+      "module.exports = [",
+      "  function() {",
+      "    console.log('Hello, world.');",
+      "  }",
+      "]"
     ],
     "parsedModule": function() {
       return this.js2json.parseModule(this.values.example);
@@ -41,6 +49,10 @@ module.exports = {
     "unindent": function() {
       var obj = this.js2json.convert(this.values.example);
       this.assert.equal(obj.hello, this.values.exampleFunction);
+    },
+    "function in array": function() {
+      var obj = this.js2json.convert(this.values.arrayExample);
+      this.assert.ok(/^function/.test(obj[0]));
     }
   },
   "run": function() {

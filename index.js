@@ -41,6 +41,9 @@ module.exports = {
         values.push(expression.properties[i].value);
       }
     } else if (expression.type == 'ArrayExpression') {
+      for (var i=0; i < expression.elements.length; i++) {
+        values.push(expression.elements[i]);
+      }
       // TODO: put array values in values variable
     } else if (expression.type == 'FunctionExpression') {
       // in case the source has the form: module.exports = function() { /*src* }
