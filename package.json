@@ -1,0 +1,20 @@
+{
+  "name": "js2json",
+  "author": {
+    "name": "Ben Atkin",
+    "email": "ben@benatkin.com",
+    "url": "http://benatkin.com/"
+  },
+  "description": "converts json-structured javascript to json",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benatkin/js2json.git"
+  },
+  "dependencies": {
+    "esprima": "*"
+  },
+  "scripts": {
+    "test": "node -e 'require(\"./test\").run()'"
+  }
+}
