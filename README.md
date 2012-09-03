@@ -5,9 +5,11 @@ expression will be converted to JSON by taking its source, stripping its
 indentation, and putting it into a JSON string. This is currently the
 only JavaScript expression that is supported.
 
-This is designed to provide a way to edit CouchApps in a single file by
-cloning them directly from CouchDB! Stay tuned for more tools and
-documentation to support this workflow.
+Goes with [js2json][js2json] to support modifying a CouchApp design
+document in a single file.
+
+Stay tuned for more tools to enable editing CouchApp design documents
+in their original form.
 
 [Esprima][esprima] is used to find the function definitions. `js2json`
 replaces the functions with plain-JSON strings containing the source, 
