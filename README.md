@@ -35,6 +35,7 @@ var js2json = require('js2json')
   , src = fs.readFileSync('./example.js', 'utf8')
   , obj = js2json.convert(src);
 console.log(JSON.stringify(obj, null, 2));
+console.log(obj.hello);
 ```
 
 output:
@@ -42,6 +43,10 @@ output:
 ```
 {
   "hello": "function() {\n  /* a comment */\n  console.log('Hello, world.');\n}"
+}
+function() {
+  /* a comment */
+  console.log('Hello, world.');
 }
 ```
 
