@@ -6,7 +6,7 @@
     "url": "http://benatkin.com/"
   },
   "description": "converts json-structured javascript to json",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/benatkin/js2json.git"
