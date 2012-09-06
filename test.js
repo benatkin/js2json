@@ -5,7 +5,6 @@ module.exports = {
     this.values.example = this.values.example.join("\n");
     this.values.exampleFunction = this.values.exampleFunction.join("\n");
     this.values.arrayExample = this.values.arrayExample.join("\n");
-    this.values.parsedModule = this.values.parsedModule.bind(this);
   },
   "values": {
     "example": [
@@ -28,30 +27,19 @@ module.exports = {
       "    console.log('Hello, world.');",
       "  }",
       "]"
-    ],
-    "parsedModule": function() {
-      return this.js2json.parseModule(this.values.example);
-    }
+    ]
   },
   "tests": {
-    "parse module": function() {
-      var parsedModule = this.js2json.parseModule(this.values.example);
-      this.assert.ok(typeof parsedModule == 'object');
-    },
-    "find ranges": function() {
-      var ranges = this.js2json.findRanges(this.values.parsedModule());
-      this.assert.equal(ranges.length, 2);
-    },
     "convert": function() {
-      var obj = this.js2json.convert(this.values.example);
+      var obj = JSON.parse(this.js2json.convert(this.values.example));
       this.assert.equal(Object.keys(obj).length, 1);
     },
     "unindent": function() {
-      var obj = this.js2json.convert(this.values.example);
+      var obj = JSON.parse(this.js2json.convert(this.values.example));
       this.assert.equal(obj.hello, this.values.exampleFunction);
     },
     "function in array": function() {
-      var obj = this.js2json.convert(this.values.arrayExample);
+      var obj = JSON.parse(this.js2json.convert(this.values.arrayExample));
       this.assert.ok(/^function/.test(obj[0]));
     }
   },

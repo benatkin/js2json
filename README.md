@@ -11,11 +11,6 @@ document in a single file.
 Stay tuned for more tools to enable editing CouchApp design documents
 in their original form.
 
-[Esprima][esprima] is used to find the function definitions. `js2json`
-replaces the functions with plain-JSON strings containing the source, 
-and removes the required `module.exports = ` fragment and runs the
-result through `JSON.parse`.
-
 ## synopsis
 
 example.js:
@@ -35,8 +30,9 @@ run-example.js:
 var js2json = require('js2json')
   , fs = require('fs')
   , src = fs.readFileSync('./example.js', 'utf8')
-  , obj = js2json.convert(src);
-console.log(JSON.stringify(obj, null, 2));
+  , json = js2json.convert(src)
+  , obj = JSON.parse(json);
+console.log(json);
 console.log(obj.hello);
 ```
 
@@ -46,6 +42,7 @@ output:
 {
   "hello": "function() {\n  /* a comment */\n  console.log('Hello, world.');\n}"
 }
+
 function() {
   /* a comment */
   console.log('Hello, world.');

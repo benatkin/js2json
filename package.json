@@ -12,7 +12,7 @@
     "url": "https://github.com/benatkin/js2json.git"
   },
   "dependencies": {
-    "esprima": "*"
+    "falafel": "*"
   },
   "scripts": {
     "test": "node -e 'require(\"./test\").run()'"
