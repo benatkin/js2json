@@ -11,9 +11,10 @@ module.exports = {
     var exportsRemoved = false;
     var that = this;
     var replaced = this.falafel(moduleSource, function(node) {
-      if (!exportsRemoved && node.type == 'AssignmentExpression') {
+      if (node.type == 'AssignmentExpression'
+          && node.parent.type == 'ExpressionStatement'
+          && node.parent.parent.type == 'Program') {
         that.removeExports(node);
-        exportsRemoved = true;
       } else if (node.type == 'FunctionExpression') {
         that.replaceFunction.call(that, node);
       }

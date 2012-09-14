@@ -5,6 +5,7 @@ module.exports = {
     this.values.example = this.values.example.join("\n");
     this.values.exampleFunction = this.values.exampleFunction.join("\n");
     this.values.arrayExample = this.values.arrayExample.join("\n");
+    this.values.assignmentInFunctionExample = this.values.assignmentInFunctionExample.join("\n");
   },
   "values": {
     "example": [
@@ -20,6 +21,15 @@ module.exports = {
       "  /* a comment */",
       "  console.log('Hello, world.');",
       "}",
+    ],
+    "assignmentInFunctionExample": [
+      "module.exports = {",
+      "  \"hello\": function() {",
+      "    /* a comment */",
+      "    var foo = {};",
+      "    foo.bar = 3;",
+      "  }",
+      "}"
     ],
     "arrayExample": [
       "module.exports = [",
@@ -41,6 +51,10 @@ module.exports = {
     "function in array": function() {
       var obj = JSON.parse(this.js2json.convert(this.values.arrayExample));
       this.assert.ok(/^function/.test(obj[0]));
+    },
+    "assignment in function": function() {
+      var obj = JSON.parse(this.js2json.convert(this.values.assignmentInFunctionExample));
+      this.assert.ok(/^function/.test(obj.hello));
     }
   },
   "run": function() {
