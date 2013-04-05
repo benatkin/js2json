@@ -11,7 +11,7 @@ document in a single file.
 Stay tuned for more tools to enable editing CouchApp design documents
 in their original form.
 
-## synopsis
+# synopsis
 
 example.js:
 
@@ -49,7 +49,24 @@ function() {
 }
 ```
 
-## License (MIT)
+# cli usage
+
+Installing:
+
+```
+$ npm install -g js2json
+```
+
+Running:
+
+```
+$ js2json input.json
+```
+
+The json data will be printed to stdout.
+
+
+# License (MIT)
 
 Copyright (C) 2012 Ben Atkin
 
