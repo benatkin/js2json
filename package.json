@@ -6,6 +6,7 @@
     "url": "http://benatkin.com/"
   },
   "description": "converts json-structured javascript to json",
+  "bin": "./bin.js",
   "version": "0.0.5",
   "repository": {
     "type": "git",
