@@ -7,7 +7,7 @@
   },
   "description": "converts json-structured javascript to json",
   "bin": "./bin.js",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/benatkin/js2json.git"
